@@ -23,6 +23,7 @@ before_deploy:
 - chmod 600 $TRAVIS_BUILD_DIR/dash.org-test-web.pem
 - eval `ssh-agent -s`
 - ssh-add $TRAVIS_BUILD_DIR/dash.org-test-web.pem
+- cp $TRAVIS_BUILD_DIR/dash.org-test-web.pem ~/.ssh/id_rsa
 deploy:
   provider: script
   skip_cleanup: true
