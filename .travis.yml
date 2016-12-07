@@ -22,8 +22,9 @@ before_install:
 - rm deploy-key.enc
 - chmod 600 deploy-key
 - mv deploy-key ~/.ssh/id_rsa
+before_deploy:
 - eval `ssh-agent -s`
-- ssh-add ~/.ssh/id_rsa
+- ssh-add ~/.ssh/id_rsa 
 deploy:
   provider: script
   skip_cleanup: true
